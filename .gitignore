@@ -1,0 +1,26 @@
+# Python (Django)
+Django/geoviewer/__pycache__/
+Django/geoviewer/media/
+Django/geoviewer/db.sqlite3
+Django/geoviewer/.env
+Django/geoviewer/.mypy_cache/
+Django/geoviewer/staticfiles/
+*.py[cod]
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.env
+*.bak
+*.swp
+*.DS_Store
+
+# Virtual environments
+Django/env/
+
+# Node (React)
+React/geoviewer/node_modules/
+React/geoviewer/dist/
+React/geoviewer/build/
+React/geoviewer/.env
+*.log
