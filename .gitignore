@@ -24,3 +24,7 @@ React/geoviewer/dist/
 React/geoviewer/build/
 React/geoviewer/.env
 *.log
+
+# test files
+GeogToWGS84GeoKey5.tif
+test_cog.py
