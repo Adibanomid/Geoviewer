@@ -5,8 +5,8 @@ import "leaflet/dist/leaflet.css";
 export default function MapView() {
   return (
     <MapContainer
-      center={[52.0, 9.0]} // Adjust based on your data location
-      zoom={18} // Match zoom with your tile z
+      center={[52.0, 9.0]}
+      zoom={18}
       style={{ height: "500px", width: "100%" }}
     >
       <TileLayer
