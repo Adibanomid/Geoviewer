@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./FileUpload.css";
 
-export default function FileUpload({ onUploadSuccess }) {
+export default function FileUpload({ onUploadSuccess, token }) {
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState("");
   const [progress, setProgress] = useState(0);
@@ -61,7 +61,10 @@ export default function FileUpload({ onUploadSuccess }) {
         "http://localhost:8000/api/upload/",
         formData,
         {
-          headers: { "Content-Type": "multipart/form-data" },
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
           onUploadProgress: (e) => {
             const percent = Math.round((e.loaded * 100) / e.total);
             setProgress(percent);
