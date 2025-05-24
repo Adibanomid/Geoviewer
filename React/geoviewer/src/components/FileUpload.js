@@ -74,6 +74,7 @@ export default function FileUpload({ onUploadSuccess, token }) {
 
       setIsUploading(false);
       setMessage("Upload successful!");
+      onUploadSuccess();
       setError("");
       setProgress(0);
       setFile(null);

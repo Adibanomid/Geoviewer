@@ -11,6 +11,7 @@ from django.http import HttpResponse, Http404
 from django.conf import settings
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
+from django.http import JsonResponse
 import os
 import mercantile
 
@@ -66,3 +67,16 @@ def tile_view(request, filename, z, x, y):
 
     except Exception as e:
         return HttpResponse(f"Error rendering tile: {str(e)}", status=500)
+
+@permission_classes([IsAuthenticated])
+def list_geotiff_files(request):
+    geotiff_dir = os.path.join(settings.MEDIA_ROOT, 'geotiffs')
+    try:
+        files = [
+            f for f in os.listdir(geotiff_dir)
+            if f.lower().endswith('.tif') or f.lower().endswith('.tiff')
+        ]
+    except FileNotFoundError:
+        files = []
+
+    return JsonResponse({"files": files})

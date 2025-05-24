@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./LoginForm.css";
 
 export default function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -21,7 +22,7 @@ export default function LoginForm({ onLogin }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form class="login-form" onSubmit={handleSubmit}>
       <input
         value={username}
         onChange={(e) => setUsername(e.target.value)}
