@@ -148,14 +148,18 @@ yarn start
 
 - handling non cordinated tiff files(error message in front or assigning automatically)
 
+- more clear messages on frontend for authentication problems and map related issues
+
+- creating .env files to replace hardcoded data
+
+- caching system to improve performance
+
+- using celery for async upload and conversion
+
 - Support for user registration and password reset.
 
 - Allow file deletion and management.
 
 - Support for different CRS and reprojection on the fly.
 
-- caching system to improve performance
-
-- using celery for async upload and conversion
-
-- docker files and docker compose to impliment on a host for live demo
+- docker files and docker compose to implement on a host for live demo
